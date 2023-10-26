@@ -3,7 +3,10 @@
     Properties
     {
         _MainTex ("顏色紋理", 2D) = "white" {}
-		_SwerveX("左右彎曲程度", Range(-0.003,0.003)) = 0.0
+        _SwerveX_Min("SwerveX 最小值", Float) = -0.003
+        _SwerveX_Max("SwerveX 最大值", Float) = 0.003
+		_SwerveX("左右彎曲程度", Float) = 0.0
+        //_SwerveX("左右彎曲程度", Range(-0.003,0.003)) = 0.0
 		_SwerveY("上下彎曲程度", Range(-0.003,0.003)) = 0.0
         _SwerveTarget("參考目標點", Vector) = (0, 0, 1, 0)
     }

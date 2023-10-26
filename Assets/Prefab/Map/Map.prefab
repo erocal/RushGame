@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7014127853986137983}
   - component: {fileID: 4923819842145558272}
+  - component: {fileID: 789681922524027594}
+  - component: {fileID: 2119596338895993292}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -43,5 +45,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7071eb36e75390044a3bf5b8552b95cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapBlockList:
+  instantiateMapBlockList:
   - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  - {fileID: 5015466081212541165, guid: d2a36b56820998c408fd42a8150a4d21, type: 3}
+  mapBlockOffset: {x: 0, y: 0, z: 200}
+  mapBlockList: []
+--- !u!114 &789681922524027594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014127853986137982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d534d7bb8bed6746980b288632944b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {x: 0, y: 0, z: -0.5}
+--- !u!114 &2119596338895993292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014127853986137982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b8bd28d7d1578488ad410046b17290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.0005
+  material: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
+  moveSpeed: 50
+  toRightPosition: {x: 15, y: 0, z: 0}
+  toLeftPosition: {x: -15, y: 0, z: 0}

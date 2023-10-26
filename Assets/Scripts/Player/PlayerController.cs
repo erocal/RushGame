@@ -7,23 +7,43 @@ public class PlayerController : MonoBehaviour
 
     #region -- 參數參考區 --
 
+    InputController input;
     CharacterController controller;
 
     // 下一幀跳躍到的方向
-    Vector3 jumpDirection;
+    private Vector3 jumpDirection;
 
     #endregion
 
+    #region -- 初始化/運作 --
+
     void Awake()
     {
+        input = GameManagerSingleton.Instance.InputController;
         controller = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
+        // 移動行為
+        MoveBehaviour();
+    }
+
+    private void FixedUpdate()
+    {
         // 重力
         Gravity();
     }
+
+    /// <summary>
+    /// 移動行為
+    /// </summary>
+    private void MoveBehaviour()
+    {
+
+    }
+
+    #endregion
 
     #region -- 方法參考區 --
 

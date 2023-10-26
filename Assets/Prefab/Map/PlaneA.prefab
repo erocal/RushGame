@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4221396357706690765}
   - component: {fileID: 3151910654705411179}
   m_Layer: 0
-  m_Name: InstantiateNewMapBlock
+  m_Name: MapBlockTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4631802547042314270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 95}
-  m_LocalScale: {x: 25, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 200, y: 18.653, z: 15.603}
   m_Children: []
   m_Father: {fileID: 5015466081212541154}
   m_RootOrder: 29
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d567252f4704744b02f865b2ddff7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapBlockListGameObject: {fileID: 7014127853986137982, guid: 1efd99bd2fe87154b82551b7111807ab, type: 3}
 --- !u!1 &5015466081054556442
 GameObject:
   m_ObjectHideFlags: 0

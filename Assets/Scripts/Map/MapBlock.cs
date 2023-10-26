@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class MapBlock : MonoBehaviour
 {
-    [Header("掛載地圖方塊物件列表的物件")]
-    [SerializeField] GameObject mapBlockListGameObject;
-
     #region -- 參數參考區 --
 
-    InstantiateNewMapBlock instantiateNewMapBlock;
-
-    private List<GameObject> mapBlockList;
-
-    private bool hasbeentrigger;
+    MapBlockManager mapBlockManager;
 
     #endregion
 
-    private void Awake()
+    public void SetComponent(MapBlockManager component)
     {
-        instantiateNewMapBlock = mapBlockListGameObject.GetComponent<InstantiateNewMapBlock>();
-        mapBlockList = instantiateNewMapBlock.mapBlockList;
+        mapBlockManager = component;
     }
 
     #region -- 方法參考區 --
@@ -28,25 +20,10 @@ public class MapBlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hasbeentrigger) return;
-
         if (other.gameObject.tag == "Player")
         {
-            hasbeentrigger = true;
-            StartCoroutine(SetActiveMapBlock());
+            mapBlockManager.ActiveMapBlock();
         }
-    }
-
-    /// <summary>
-    /// 地圖方塊啟動
-    /// </summary>
-    IEnumerator SetActiveMapBlock()
-    {
-
-        mapBlockList[0].SetActive(true);
-
-        yield return new WaitForSeconds(5f);
-
     }
 
     #endregion
