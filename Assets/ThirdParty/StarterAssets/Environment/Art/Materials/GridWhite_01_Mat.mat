@@ -72,7 +72,7 @@ Material:
     - _SpecularHighlights: 1
     - _Speed: 4.14
     - _SrcBlend: 1
-    - _SwerveX: 0.0010038693
+    - _SwerveX: 0.0003613797
     - _SwerveX_Max: 0.003
     - _SwerveX_Min: -0.003
     - _SwerveY: 0

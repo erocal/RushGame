@@ -88,5 +88,5 @@ MonoBehaviour:
   speed: 0.0005
   material: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
   moveSpeed: 50
-  toRightPosition: {x: 15, y: 0, z: 0}
-  toLeftPosition: {x: -15, y: 0, z: 0}
+  toLeftPosition: {x: 15, y: 0, z: 0}
+  toRightPosition: {x: -15, y: 0, z: 0}

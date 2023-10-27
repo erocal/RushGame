@@ -11,9 +11,9 @@ public class DynamicMap : MonoBehaviour
     [Header("位移的速度")]
     [SerializeField] float moveSpeed = 50.0f;
     [Header("往左位移位置")]
-    [SerializeField] Vector3 toRightPosition = new Vector3(-25f, 0, 0);
+    [SerializeField] Vector3 toLeftPosition = new Vector3(15f, 0, 0);
     [Header("往右位移位置")]
-    [SerializeField] Vector3 toLeftPosition = new Vector3(25f, 0, 0);
+    [SerializeField] Vector3 toRightPosition = new Vector3(-15f, 0, 0);
 
     #region -- 參數參考區 --
 
@@ -82,15 +82,17 @@ public class DynamicMap : MonoBehaviour
                 case DirectionDefine.Direction.Down:
                     break;
                 case DirectionDefine.Direction.Left:
-                    if(targetPosition.x > toLeftPosition.x)
+                    if(targetPosition.x < toLeftPosition.x)
                     {
-                        targetPosition = new Vector3(Mathf.Max(targetPosition.x + toLeftPosition.x, toLeftPosition.x), targetPosition.y, targetPosition.z);
+                        // 地圖往右，人物往左，x軸往正方向人物會在最左邊
+                        targetPosition = new Vector3(Mathf.Min(targetPosition.x + toLeftPosition.x, toLeftPosition.x), targetPosition.y, targetPosition.z);
                     }
                     break;
                 case DirectionDefine.Direction.Right:
-                    if (targetPosition.x < toRightPosition.x)
+                    if (targetPosition.x > toRightPosition.x)
                     {
-                        targetPosition = new Vector3(Mathf.Min(targetPosition.x + toRightPosition.x, toRightPosition.x), targetPosition.y, targetPosition.z);
+                        // 地圖往左，人物往右，x軸往負方向人物會在最左邊
+                        targetPosition = new Vector3(Mathf.Max(targetPosition.x + toRightPosition.x, toRightPosition.x), targetPosition.y, targetPosition.z);
                     }
                     break;
                 default:
