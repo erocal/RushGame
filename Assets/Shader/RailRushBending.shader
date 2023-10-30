@@ -70,7 +70,7 @@
 				//方法與上面相同，改變Y軸，獲得上下坡效果
 				WorldSpacePosition.y += pow(distance, 2)*_SwerveY;
 
-				//修正模型位置，WorldSpacePosition 不包含物體自身的空间位移
+				//修正模型位置，WorldSpacePosition 不包含物體自身的空間位移
 				WorldSpacePosition -= mul(unity_ObjectToWorld, float4(0, 0, 0, 1));
 
 				//修改世界頂點轉回物體自身頂點

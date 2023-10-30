@@ -1,13 +1,13 @@
-﻿using TMPro;
-using UnityEngine;
-using UnityEngine.InputSystem.XR;
+﻿using UnityEngine;
 
 public class DynamicMap : MonoBehaviour
 {
     [Header("變化材質的速度")]
     [SerializeField] float speed = 0.0005f;
-    [Header("變化的材質")]
-    [SerializeField] Material material;
+    [Header("變化的道路材質")]
+    [SerializeField] Material roadMaterial;
+    [Header("變化的金幣材質")]
+    [SerializeField] Material coinMaterial;
     [Header("位移的速度")]
     [SerializeField] float moveSpeed = 50.0f;
     [Header("往左位移位置")]
@@ -33,7 +33,8 @@ public class DynamicMap : MonoBehaviour
 
     private void Update()
     {
-        DynamicSet_SwerveX();
+        DynamicSet_SwerveX(roadMaterial);
+        DynamicSet_SwerveX(coinMaterial);
         // 地圖移動行為
         MoveBehaviour();
     }
@@ -41,23 +42,20 @@ public class DynamicMap : MonoBehaviour
     /// <summary>
     /// 在_SwerveX的Range極值之間來回設置shader的數值
     /// </summary>
-    private void DynamicSet_SwerveX()
+    /// <param name="material">傳入要更改的Material</param>
+    private void DynamicSet_SwerveX(Material material)
     {
-        if (material == null)
-        {
-            Debug.LogWarning(" 未獲取地圖材質 ");
-            return;
-        }
 
         // 獲取最小值和最大值
         var swerveXMin = material.GetFloat("_SwerveX_Min");
         var swerveXMax = material.GetFloat("_SwerveX_Max");
 
-        // 计算新的SwerveX值并限制在范围内
+        // 計算新的SwerveX值並限制在範圍內
         float swerveXValue = Mathf.Clamp(Mathf.PingPong(Time.time * speed, swerveXMax - swerveXMin) + swerveXMin, swerveXMin, swerveXMax);
 
         // 設置Shader屬性值
         material.SetFloat("_SwerveX", swerveXValue);
+
     }
 
     /// <summary>

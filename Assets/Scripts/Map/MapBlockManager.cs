@@ -12,11 +12,12 @@ public class MapBlockManager : MonoBehaviour
     [Header("地圖方塊的間距")]
     [SerializeField] Vector3 mapBlockOffset;
 
-    #region -- 參數參考區 --
-
     [Header("地圖方塊列表")]
     [SerializeField] List<GameObject> mapBlockList = new List<GameObject>();
 
+    #region -- 參數參考區 --
+
+    CoinManager coinManager;
     private int currentActiveIndex = 0;
 
     #endregion
@@ -30,6 +31,7 @@ public class MapBlockManager : MonoBehaviour
 
     private void InitMapBlock()
     {
+        
         for (int i = 0; i < instantiateMapBlockList.Count; i++)
         {
             GameObject mapBlock = Instantiate(instantiateMapBlockList[i], this.transform);
