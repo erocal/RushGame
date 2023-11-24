@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 /// <summary>
-/// ´£¨Ñ¤è¦VªºªTÁ|
+/// æä¾›æ–¹å‘çš„æšèˆ‰
 /// </summary>
 public class DirectionDefine
 {
     /// <summary>
-    /// ¤è¦VªºªTÁ|
+    /// æ–¹å‘çš„æšèˆ‰
     /// </summary>
     public enum Direction
     {
@@ -19,42 +19,42 @@ public class DirectionDefine
 
 public class InputController : MonoBehaviour
 {
-    #region -- °Ñ¼Æ°Ñ¦Ò°Ï --
+    #region -- åƒæ•¸åƒè€ƒå€ --
 
     /// <summary>
-    /// ¤âªº¤è¦V
+    /// æ‰‹çš„æ–¹å‘
     /// </summary>
     private DirectionDefine.Direction handDirection;
 
     /// <summary>
-    /// ·Æ¹«¥ªÁä
+    /// æ»‘é¼ å·¦éµ
     /// </summary>
     private const int LeftMouseButton = 0;
 
-    //¬ö¿ı¤â«üÄ²¸I¦ì¸m
+    //ç´€éŒ„æ‰‹æŒ‡è§¸ç¢°ä½ç½®
     private Vector2 touchScreenPos = new Vector2();
 
     #endregion
 
-    #region -- ªì©l¤Æ/¹B§@ --
+    #region -- åˆå§‹åŒ–/é‹ä½œ --
 
     private void Update()
     {
         handDirection = DirectionDefine.Direction.None;
 
         #if UNITY_EDITOR || UNITY_STANDALONE
-                MouseInput();   // ·Æ¹«°»´ú
+                MouseInput();   // æ»‘é¼ åµæ¸¬
         #elif UNITY_ANDROID
-		        MobileInput();  // Ä²¸I°»´ú
+		        MobileInput();  // è§¸ç¢°åµæ¸¬
         #endif
     }
 
     #endregion
 
-    #region -- ¤èªk°Ñ¦Ò°Ï --
+    #region -- æ–¹æ³•åƒè€ƒå€ --
 
     /// <summary>
-    /// °»´ú·Æ¹«¿é¤J
+    /// åµæ¸¬æ»‘é¼ è¼¸å…¥
     /// </summary>
     void MouseInput()
     {
@@ -77,35 +77,35 @@ public class InputController : MonoBehaviour
     }
 
     /// <summary>
-    /// ¤â¾÷°»´úÄ²¸I¿é¤J
+    /// æ‰‹æ©Ÿåµæ¸¬è§¸ç¢°è¼¸å…¥
     /// </summary>
     void MobileInput()
     {
         if (Input.touchCount <= 0)
             return;
 
-        //1­Ó¤â«üÄ²¸I¿Ã¹õ
+        //1å€‹æ‰‹æŒ‡è§¸ç¢°è¢å¹•
         if (Input.touchCount == 1)
         {
 
-            //¶}©lÄ²¸I
+            //é–‹å§‹è§¸ç¢°
             if (Input.touches[0].phase == TouchPhase.Began)
             {
                 Debug.Log("Began");
-                //¬ö¿ıÄ²¸I¦ì¸m
+                //ç´€éŒ„è§¸ç¢°ä½ç½®
                 touchScreenPos = Input.touches[0].position;
 
-                //¤â«ü²¾°Ê
+                //æ‰‹æŒ‡ç§»å‹•
             }
             else if (Input.touches[0].phase == TouchPhase.Moved)
             {
                 Debug.Log("Moved");
-                //²¾°ÊÄá¼v¾÷
+                //ç§»å‹•æ”å½±æ©Ÿ
                 //Camera.main.transform.Translate (new Vector3 (-Input.touches [0].deltaPosition.x * Time.deltaTime, -Input.touches [0].deltaPosition.y * Time.deltaTime, 0));
             }
 
 
-            //¤â«üÂ÷¶}¿Ã¹õ
+            //æ‰‹æŒ‡é›¢é–‹è¢å¹•
             if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
             {
                 Debug.Log("Ended");
@@ -114,20 +114,20 @@ public class InputController : MonoBehaviour
                 DirectionDefine.Direction handDirection = HandDirection(touchScreenPos, pos);
                 Debug.Log($"handDirection: {handDirection}");
             }
-            //Äá¼v¾÷ÁY©ñ¡A¦pªG1­Ó¤â«ü¥H¤WÄ²¸I¿Ã¹õ
+            //æ”å½±æ©Ÿç¸®æ”¾ï¼Œå¦‚æœ1å€‹æ‰‹æŒ‡ä»¥ä¸Šè§¸ç¢°è¢å¹•
         }
         else if (Input.touchCount > 1)
         {
 
-            //°O¿ı¨â­Ó¤â«ü¦ì¸m
+            //è¨˜éŒ„å…©å€‹æ‰‹æŒ‡ä½ç½®
             Vector2 finger1 = new Vector2();
             Vector2 finger2 = new Vector2();
 
-            //°O¿ı¨â­Ó¤â«ü²¾°Ê¶ZÂ÷
+            //è¨˜éŒ„å…©å€‹æ‰‹æŒ‡ç§»å‹•è·é›¢
             Vector2 move1 = new Vector2();
             Vector2 move2 = new Vector2();
 
-            //¬O§_¬O¤p©ó2ÂIÄ²¸I
+            //æ˜¯å¦æ˜¯å°æ–¼2é»è§¸ç¢°
             for (int i = 0; i < 2; i++)
             {
                 UnityEngine.Touch touch = UnityEngine.Input.touches[i];
@@ -137,22 +137,22 @@ public class InputController : MonoBehaviour
 
                 if (touch.phase == TouchPhase.Moved)
                 {
-                    //¨C¦¸³£­«¸m
+                    //æ¯æ¬¡éƒ½é‡ç½®
                     float move = 0;
 
-                    //Ä²¸I¤@ÂI
+                    //è§¸ç¢°ä¸€é»
                     if (i == 0)
                     {
                         finger1 = touch.position;
                         move1 = touch.deltaPosition;
-                        //¥t¤@ÂI
+                        //å¦ä¸€é»
                     }
                     else
                     {
                         finger2 = touch.position;
                         move2 = touch.deltaPosition;
 
-                        //¨ú³Ì¤jX
+                        //å–æœ€å¤§X
                         if (finger1.x > finger2.x)
                         {
                             move = move1.x;
@@ -162,7 +162,7 @@ public class InputController : MonoBehaviour
                             move = move2.x;
                         }
 
-                        //¨ú³Ì¤jY¡A¨Ã»P¨ú¥XªºX²Ö¥[
+                        //å–æœ€å¤§Yï¼Œä¸¦èˆ‡å–å‡ºçš„Xç´¯åŠ 
                         if (finger1.y > finger2.y)
                         {
                             move += move1.y;
@@ -172,16 +172,16 @@ public class InputController : MonoBehaviour
                             move += move2.y;
                         }
 
-                        //·í¨â«ü¶ZÂ÷¶V»·¡AZ¦ì¸m¥[ªº¶V¦h¡A¬Û¤Ï¤§
+                        //ç•¶å…©æŒ‡è·é›¢è¶Šé ï¼ŒZä½ç½®åŠ çš„è¶Šå¤šï¼Œç›¸åä¹‹
                         Camera.main.transform.Translate(0, 0, move * Time.deltaTime);
                     }
                 }
             }//end for
         }//end else if 
-    }// ¤èªkµ²§ô
+    }// æ–¹æ³•çµæŸ
 
     /// <summary>
-    /// ¨ú±o¤â·Æªº¤è¦V
+    /// å–å¾—æ‰‹æ»‘çš„æ–¹å‘
     /// </summary>
     /// <returns></returns>
     public DirectionDefine.Direction GetHandDirection()
@@ -189,8 +189,14 @@ public class InputController : MonoBehaviour
         return handDirection;
     }
 
+    public bool GetSlideUp()
+    {
+        if(handDirection == DirectionDefine.Direction.Up) return true;
+        return false;
+    }
+
     /// <summary>
-    /// ¬O§_«ö¤U·Æ¹«¥ªÁä
+    /// æ˜¯å¦æŒ‰ä¸‹æ»‘é¼ å·¦éµ
     /// </summary>
     public bool GetLeftMouseClickDown()
     {
@@ -198,7 +204,7 @@ public class InputController : MonoBehaviour
     }
 
     /// <summary>
-    /// ¬O§_©ñ¶}·Æ¹«¥ªÁä
+    /// æ˜¯å¦æ”¾é–‹æ»‘é¼ å·¦éµ
     /// </summary>
     public bool GetLeftMouseClickUp()
     {
@@ -206,41 +212,42 @@ public class InputController : MonoBehaviour
     }
 
     /// <summary>
-    /// §PÂ_¤â·Æªº¤è¦V
+    /// åˆ¤æ–·æ‰‹æ»‘çš„æ–¹å‘
     /// </summary>
-    /// <param name="StartPos">¤@¶}©lÄ²¸IªºÂI</param>
-    /// <param name="EndPos">¤â«üÂ÷¶}ªºÂI</param>
+    /// <param name="StartPos">ä¸€é–‹å§‹è§¸ç¢°çš„é»</param>
+    /// <param name="EndPos">æ‰‹æŒ‡é›¢é–‹çš„é»</param>
     /// <returns></returns>
     DirectionDefine.Direction HandDirection(Vector2 StartPos, Vector2 EndPos)
     {
 
-        //¤â«ü¤ô¥­²¾°Ê
+        //æ‰‹æŒ‡æ°´å¹³ç§»å‹•
         if (Mathf.Abs(StartPos.x - EndPos.x) > Mathf.Abs(StartPos.y - EndPos.y))
         {
             if (StartPos.x > EndPos.x)
             {
-                //¤â«ü¦V¥ª·Æ°Ê
+                //æ‰‹æŒ‡å‘å·¦æ»‘å‹•
                 handDirection = DirectionDefine.Direction.Left;
             }
             else
             {
-                //¤â«ü¦V¥k·Æ°Ê
+                //æ‰‹æŒ‡å‘å³æ»‘å‹•
                 handDirection = DirectionDefine.Direction.Right;
             }
         }
-        else
+        else if (Mathf.Abs(StartPos.x - EndPos.x) < Mathf.Abs(StartPos.y - EndPos.y))
         {
             if (touchScreenPos.y > EndPos.y)
             {
-                //¤â«ü¦V¤U·Æ°Ê
+                //æ‰‹æŒ‡å‘ä¸‹æ»‘å‹•
                 handDirection = DirectionDefine.Direction.Down;
             }
             else
             {
-                //¤â«ü¦V¤W·Æ°Ê
+                //æ‰‹æŒ‡å‘ä¸Šæ»‘å‹•
                 handDirection = DirectionDefine.Direction.Up;
             }
         }
+        else handDirection = DirectionDefine.Direction.None;
         return handDirection;
     }
 

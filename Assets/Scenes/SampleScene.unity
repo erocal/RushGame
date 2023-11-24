@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &235138385
 Transform:
   m_ObjectHideFlags: 0
@@ -606,6 +606,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 874886628, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874886628, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1003533678, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1003533678, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1003533678, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601427873, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601427873, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601427873, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728033330, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728033330, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1953012950655340078, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7914,6 +7954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityDownForce: 50
+  jumpForce: 15
+  distanceToGround: 0.1
 --- !u!1 &3389135372534402433
 GameObject:
   m_ObjectHideFlags: 0
@@ -9182,6 +9224,10 @@ PrefabInstance:
       propertyPath: roadMaterial
       value: 
       objectReference: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
+    - target: {fileID: 2119596338895993292, guid: 1efd99bd2fe87154b82551b7111807ab, type: 3}
+      propertyPath: swerveYValue
+      value: -0.0012
+      objectReference: {fileID: 0}
     - target: {fileID: 4923819842145558272, guid: 1efd99bd2fe87154b82551b7111807ab, type: 3}
       propertyPath: instantiateMapBlockList.Array.size
       value: 120

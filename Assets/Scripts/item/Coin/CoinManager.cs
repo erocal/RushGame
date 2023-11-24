@@ -40,10 +40,10 @@ public class CoinManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            // 随机选择 x 坐标值
-            int randomX = Random.Range(0, 3) * 15 - 15; // 在 -15、0、15 中选择一个值
+            // 隨機在-15、0、15 中選擇一個值
+            int randomX = Random.Range(0, 3) * 15 - 15;
 
-            // 随机生成 z 坐标，确保 z 间隔至少为 minZSpacing
+            // 隨機生成z座標，確保 z 間隔至少為 minZSpacing
             int randomZ = Random.Range(-zRange, zRange + 1);
             int spacing = minZSpacing;
 
@@ -55,7 +55,7 @@ public class CoinManager : MonoBehaviour
                 randomZ = (int)Mathf.Max(minZ, randomZ);
             }
 
-            // 创建位置向量
+            // 創建位置向量
             Vector3 randomPosition = new Vector3(randomX, y, randomZ);
 
             coinList[i].transform.position = randomPosition;

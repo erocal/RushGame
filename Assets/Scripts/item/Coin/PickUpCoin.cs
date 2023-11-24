@@ -1,15 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PickUpCoin : MonoBehaviour
 {
 
-    #region -- °Ñ¼Æ°Ñ¦Ò°Ï --
+    #region -- åƒæ•¸åƒè€ƒå€ --
 
     CameraController cameraController;
     UIManager uiManager;
     PickUp pickUp;
     /// <summary>
-    /// ª÷¹ôªº»ù­È
+    /// é‡‘å¹£çš„åƒ¹å€¼
     /// </summary>
     int worthOfCoin = 1;
 
@@ -28,14 +28,14 @@ public class PickUpCoin : MonoBehaviour
         pickUp.onPick += OnPick;
     }
 
-    #region -- ¤èªk°Ñ¦Ò°Ï --
+    #region -- æ–¹æ³•åƒè€ƒå€ --
 
     #endregion
 
     /// <summary>
-    /// ¾ß°_ª÷¹ô
+    /// æ’¿èµ·é‡‘å¹£
     /// </summary>
-    /// <param name="player">ª±®a</param>
+    /// <param name="player">ç©å®¶</param>
     void OnPick(GameObject player)
     {
         transform.parent.gameObject.SetActive(false);
