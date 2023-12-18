@@ -606,6 +606,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 285
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942198, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -500
+      objectReference: {fileID: 0}
     - target: {fileID: 874886628, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -645,6 +677,14 @@ PrefabInstance:
     - target: {fileID: 1728033330, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102290950, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_Text
+      value: "\u65CB\u8F49"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102290950, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1953012950655340078, guid: a926219777e6fff4e931f9ceaf1bd61a, type: 3}
       propertyPath: m_Pivot.x
