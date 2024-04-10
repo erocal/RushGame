@@ -1,15 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-// singleton³æ¨Ò¼Ò¦¡
-// ¥i¥H½T«O¥Í¦¨¹ï¶H¥u¦³¤@­Ó¹ê¨Ò¦s¦b
-// ¶}µo¹CÀ¸·|§Æ±æ¬Y­ÓÃş§O¥u¦³¤@­Ó¹ê¨Ò¤Æª«¥ó´N¥i¥H¨Ï¥Î
+// singletonå–®ä¾‹æ¨¡å¼
+// å¯ä»¥ç¢ºä¿ç”Ÿæˆå°è±¡åªæœ‰ä¸€å€‹å¯¦ä¾‹å­˜åœ¨
+// é–‹ç™¼éŠæˆ²æœƒå¸Œæœ›æŸå€‹é¡åˆ¥åªæœ‰ä¸€å€‹å¯¦ä¾‹åŒ–ç‰©ä»¶å°±å¯ä»¥ä½¿ç”¨
 public class GameManagerSingleton
 {
+
+    #region -- è®Šæ•¸åƒè€ƒå€ --
+
     private GameObject gameObject;
 
-    //³æ¨Ò
+    //å–®ä¾‹
     private static GameManagerSingleton m_Instance;
-    //±µ¤f¡A½T»{³æ¨Ò¬O§_¦s¦b
+    //æ¥å£ï¼Œç¢ºèªå–®ä¾‹æ˜¯å¦å­˜åœ¨
     public static GameManagerSingleton Instance
     {
         get
@@ -24,7 +27,7 @@ public class GameManagerSingleton
         }
     }
 
-    // µn°OInputController(¤@­Ó¹CÀ¸¥u·|¦³¤@­Ó)
+    // ç™»è¨˜InputController(ä¸€å€‹éŠæˆ²åªæœƒæœ‰ä¸€å€‹)
     private InputController m_InputController;
     public InputController InputController
     {
@@ -37,4 +40,7 @@ public class GameManagerSingleton
             return m_InputController;
         }
     }
+
+    #endregion
+
 }

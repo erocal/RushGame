@@ -1,23 +1,32 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [Header("ª÷¹ô¼Æ¶q")]
+
+    #region -- è³‡æºåƒè€ƒå€ --
+
+    [Header("é‡‘å¹£æ•¸é‡")]
     [SerializeField] Text Text_Coin;
+
+    #endregion
+
+    #region -- åˆå§‹åŒ–/é‹ä½œ --
 
     private void Awake()
     {
         Text_Coin.text = "0";
     }
 
-    #region -- ¤èªk°Ñ¦Ò°Ï --
+    #endregion
+
+    #region -- æ–¹æ³•åƒè€ƒå€ --
 
     /// <summary>
-    /// ­pºâ¶Ç¤Jªºª÷¹ô»ù­È¡A¹ïUIªºª÷¹ô¼Æ¶i¦æ§ó§ï
+    /// è¨ˆç®—å‚³å…¥çš„é‡‘å¹£åƒ¹å€¼ï¼Œå°UIçš„é‡‘å¹£æ•¸é€²è¡Œæ›´æ”¹
     /// </summary>
-    /// <param name="worth">¶Ç¤Jªº»ù­È</param>
+    /// <param name="worth">å‚³å…¥çš„åƒ¹å€¼</param>
     public void CoinCalculate(int worth)
     {
         int coin = Int32.Parse( Text_Coin.text );

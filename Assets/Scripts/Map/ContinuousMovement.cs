@@ -1,16 +1,25 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 /// <summary>
-/// ³B²z¥ô·Nª«¥ó¨C´V©¹¤Tºû¤è¦V²¾°Ê
+/// è™•ç†ä»»æ„ç‰©ä»¶æ¯å¹€å¾€ä¸‰ç¶­æ–¹å‘ç§»å‹•
 /// </summary>
 public class ContinuousMovement : MonoBehaviour
 {
-    [Header("¨C´V²¾°Êªº¶ZÂ÷")]
+
+    #region -- è³‡æºåƒè€ƒå€ --
+
+    [Header("æ¯å¹€ç§»å‹•çš„è·é›¢")]
     [SerializeField] Vector3 move;
 
-    // Update is called once per frame
+    #endregion
+
+    #region -- åˆå§‹åŒ–/é‹ä½œ --
+
     void Update()
     {
         this.transform.position += move;
     }
+
+    #endregion
+
 }

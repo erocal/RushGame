@@ -2,6 +2,9 @@
 
 public class DynamicMap : MonoBehaviour
 {
+
+    #region -- 資源參考區 --
+
     [Header("位移的速度")]
     [SerializeField] float moveSpeed = 50.0f;
     [Header("往左位移位置")]
@@ -9,7 +12,9 @@ public class DynamicMap : MonoBehaviour
     [Header("往右位移位置")]
     [SerializeField] Vector3 toRightPosition = new Vector3(-15f, 0, 0);
 
-    #region -- 參數參考區 --
+    #endregion
+
+    #region -- 變數參考區 --
 
     InputController input;
 

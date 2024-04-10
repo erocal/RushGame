@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
+
+    #region -- 資源參考區 --
+
     [Header("要生成的金幣")]
     [SerializeField] GameObject coin;
     [Header("生成的金幣數量")]
     [SerializeField] int amount = 15;
+
+    #endregion
 
     #region -- 參數參考區 --
 
@@ -17,6 +22,8 @@ public class CoinManager : MonoBehaviour
     int minZSpacing = 5; // 最小 z 间隔
 
     #endregion
+
+    #region -- 初始化/運作 --
 
     void Awake()
     {
@@ -30,6 +37,8 @@ public class CoinManager : MonoBehaviour
         SetPosition();
             
     }
+
+    #endregion
 
     #region -- 方法參考區--
 

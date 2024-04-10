@@ -44,10 +44,11 @@ Shader "Custom/AnimalCrossingBending"
 			//ÃC¦â¯¾²z
             sampler2D _MainTex;
 			float _BendY;
+
             v2f vert (appdata v)
             {
                 v2f o;
-
+                
                 o.uv = v.uv;
 				
 				float3 WordPos = mul(unity_ObjectToWorld, v.vertex);

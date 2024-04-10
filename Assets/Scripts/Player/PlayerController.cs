@@ -1,29 +1,33 @@
-using System.Security.Claims;
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("¦bªÅ¤¤¤U¬I¥[ªº¤O¶q")]
+
+    #region -- è³‡æºåƒè€ƒå€ --
+
+    [Header("åœ¨ç©ºä¸­ä¸‹æ–½åŠ çš„åŠ›é‡")]
     [SerializeField] float gravityDownForce = 50;
 
     [Space(20)]
-    [Header("¸õÅD°Ñ¼Æ")]
-    [Tooltip("¸õÅD®É¦V¤W¬I¥[ªº¤O¶q")]
+    [Header("è·³èºåƒæ•¸")]
+    [Tooltip("è·³èºæ™‚å‘ä¸Šæ–½åŠ çš„åŠ›é‡")]
     [SerializeField] float jumpForce = 15;
-    [Tooltip("ÀË¬d»P¦a­±¤§¶¡ªº¶ZÂ÷")]
+    [Tooltip("æª¢æŸ¥èˆ‡åœ°é¢ä¹‹é–“çš„è·é›¢")]
     [SerializeField] float distanceToGround = 0.1f;
 
-    #region -- °Ñ¼Æ°Ñ¦Ò°Ï --
+    #endregion
+
+    #region -- è®Šæ•¸åƒè€ƒå€ --
 
     InputController input;
     CharacterController controller;
 
-    // ¤U¤@´V¸õÅD¨ìªº¤è¦V
+    // ä¸‹ä¸€å¹€è·³èºåˆ°çš„æ–¹å‘
     private Vector3 jumpDirection;
 
     #endregion
 
-    #region -- ªì©l¤Æ/¹B§@ --
+    #region -- åˆå§‹åŒ–/é‹ä½œ --
 
     void Awake()
     {
@@ -33,26 +37,26 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // ¸õÅD¦æ¬°
+        // è·³èºè¡Œç‚º
         JumpBehaviour();
     }
 
     private void FixedUpdate()
     {
-        // ­«¤O
+        // é‡åŠ›
         Gravity();
     }
 
     #endregion
 
-    #region -- ¤èªk°Ñ¦Ò°Ï --
+    #region -- æ–¹æ³•åƒè€ƒå€ --
 
     /// <summary>
-    /// ²¾°Ê¦æ¬°
+    /// ç§»å‹•è¡Œç‚º
     /// </summary>
     private void JumpBehaviour()
     {
-        // ·í¤Hª«³B©ó¦a­±¡A«ö¤U¸õÅDÁä®É
+        // ç•¶äººç‰©è™•æ–¼åœ°é¢ï¼ŒæŒ‰ä¸‹è·³èºéµæ™‚
         if (input.GetSlideUp() && IsGrounded())
         {
             jumpDirection = Vector3.zero;
@@ -61,7 +65,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ³B²z­«¤O
+    /// è™•ç†é‡åŠ›
     /// </summary>
     private void Gravity()
     {
@@ -73,9 +77,9 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ÀË´úª±®a¬O§_¦b¦a¤W
+    /// æª¢æ¸¬ç©å®¶æ˜¯å¦åœ¨åœ°ä¸Š
     /// </summary>
-    /// <returns>¦^¶Çª±®a¬O§_¦b¦a¤W</returns>
+    /// <returns>å›å‚³ç©å®¶æ˜¯å¦åœ¨åœ°ä¸Š</returns>
     private bool IsGrounded()
     {
         //Debug.DrawRay(transform.position, -Vector3.up * distanceToGround, Color.yellow);
@@ -83,4 +87,5 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
 }

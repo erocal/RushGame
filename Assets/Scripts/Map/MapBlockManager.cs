@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class MapBlockManager : MonoBehaviour
 {
+
+    #region -- 資源參考區 --
+
     [Header("要生成的地圖方塊物件列表")]
     [SerializeField] List<GameObject> instantiateMapBlockList;
 
@@ -15,12 +18,15 @@ public class MapBlockManager : MonoBehaviour
     [Header("地圖方塊列表")]
     [SerializeField] List<GameObject> mapBlockList = new List<GameObject>();
 
+    #endregion
+
     #region -- 參數參考區 --
 
-    CoinManager coinManager;
     private int currentActiveIndex = 0;
 
     #endregion
+
+    #region -- 初始化/運作 --
 
     private void Awake()
     {
@@ -29,6 +35,13 @@ public class MapBlockManager : MonoBehaviour
 
     }
 
+    #endregion
+
+    #region -- 方法參考區 --
+
+    /// <summary>
+    /// 初始化地圖方塊
+    /// </summary>
     private void InitMapBlock()
     {
         
@@ -77,4 +90,7 @@ public class MapBlockManager : MonoBehaviour
         // 設置每個地圖方塊的位置
         mapBlock.transform.position = position;
     }
+
+    #endregion
+
 }

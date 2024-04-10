@@ -2,6 +2,9 @@
 
 public class MaterialController : MonoBehaviour
 {
+
+    #region -- 資源參考區 --
+
     [Header("變化材質的速度")]
     [SerializeField] float speed = 0.0005f;
     [Header("變化的道路材質")]
@@ -13,11 +16,15 @@ public class MaterialController : MonoBehaviour
     [Header("共通材質的SwerveY")]
     [SerializeField] float swerveYValue;
 
+    #endregion
+
     #region -- 參數參考區 --
 
     bool isDynamicSet = false;
 
     #endregion
+
+    #region -- 初始化/運作 --
 
     void Update()
     {
@@ -29,6 +36,8 @@ public class MaterialController : MonoBehaviour
         else MaterialSet_SwerveX();
         MaterialSet_SwerveY();
     }
+
+    #endregion
 
     #region -- 方法參考區 --
 

@@ -1,13 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MapBlock : MonoBehaviour
 {
+
+    #region -- 資源參考區 --
+
     [Header("金幣管理")]
     [SerializeField] CoinManager coinManager;
 
-    #region -- 參數參考區 --
+    #endregion
+
+    #region -- 變數參考區 --
 
     MapBlockManager mapBlockManager;
 
@@ -35,4 +38,5 @@ public class MapBlock : MonoBehaviour
     }
 
     #endregion
+
 }

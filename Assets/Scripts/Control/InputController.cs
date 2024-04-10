@@ -1,25 +1,8 @@
 ﻿using UnityEngine;
-/// <summary>
-/// 提供方向的枚舉
-/// </summary>
-public class DirectionDefine
-{
-    /// <summary>
-    /// 方向的枚舉
-    /// </summary>
-    public enum Direction
-    {
-        None,
-        Up,
-        Down,
-        Left,
-        Right
-    }
-}
 
 public class InputController : MonoBehaviour
 {
-    #region -- 參數參考區 --
+    #region -- 變數參考區 --
 
     /// <summary>
     /// 手的方向
@@ -100,8 +83,6 @@ public class InputController : MonoBehaviour
             else if (Input.touches[0].phase == TouchPhase.Moved)
             {
                 Debug.Log("Moved");
-                //移動攝影機
-                //Camera.main.transform.Translate (new Vector3 (-Input.touches [0].deltaPosition.x * Time.deltaTime, -Input.touches [0].deltaPosition.y * Time.deltaTime, 0));
             }
 
 

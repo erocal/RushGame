@@ -3,7 +3,7 @@
 public class PickUpCoin : MonoBehaviour
 {
 
-    #region -- 參數參考區 --
+    #region -- 變數參考區 --
 
     CameraController cameraController;
     UIManager uiManager;
@@ -14,6 +14,8 @@ public class PickUpCoin : MonoBehaviour
     int worthOfCoin = 1;
 
     #endregion
+
+    #region -- 初始化/運作 --
 
     private void Awake()
     {
@@ -28,11 +30,11 @@ public class PickUpCoin : MonoBehaviour
         pickUp.onPick += OnPick;
     }
 
-    #region -- 方法參考區 --
-
     #endregion
 
-    /// <summary>
+    #region -- 方法參考區 --
+
+/// <summary>
     /// 撿起金幣
     /// </summary>
     /// <param name="player">玩家</param>
@@ -44,4 +46,7 @@ public class PickUpCoin : MonoBehaviour
 
         cameraController?.ActiveParticle("Coin");
     }
+
+    #endregion
+    
 }

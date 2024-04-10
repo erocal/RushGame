@@ -1,16 +1,25 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Header("¦Y¨ìª÷¹ô®Éªº¯S®Ä")]
+
+    #region -- è³‡æºåƒè€ƒå€ --
+
+    [Header("åƒåˆ°é‡‘å¹£æ™‚çš„ç‰¹æ•ˆ")]
     [SerializeField] ParticleSystem getCoinParticle;
+
+    #endregion
+
+    #region -- åˆå§‹åŒ–/é‹ä½œ --
 
     void Awake()
     {
         getCoinParticle.Stop();
     }
 
-    #region -- ¤èªk°Ñ¦Ò°Ï --
+    #endregion
+
+    #region -- æ–¹æ³•åƒè€ƒå€ --
 
     public void ActiveParticle(string particleName)
     {
